@@ -1,0 +1,466 @@
+/* =========================================================
+   Anti Scam Detector
+   Popup Style v1.0
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+}
+
+body{
+
+    width:380px;
+
+    min-height:520px;
+
+    background:#f4f7fb;
+
+    color:#1f2937;
+
+}
+
+/* =========================================================
+Container
+========================================================= */
+
+.container{
+
+    padding:16px;
+
+}
+
+/* =========================================================
+Header
+========================================================= */
+
+header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+}
+
+.logo{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.header-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.header-text h1{
+
+    font-size:19px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.header-text span{
+
+    font-size:12px;
+
+    color:#6b7280;
+
+}
+
+/* =========================================================
+Card
+========================================================= */
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:14px;
+
+    padding:15px;
+
+    margin-bottom:14px;
+
+    box-shadow:
+
+        0 4px 12px rgba(0,0,0,.08);
+
+    border:1px solid #eef2f7;
+
+}
+
+.center{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* =========================================================
+Label
+========================================================= */
+
+.label{
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    color:#6b7280;
+
+    letter-spacing:.6px;
+
+    margin-bottom:10px;
+
+}
+
+/* =========================================================
+URL
+========================================================= */
+
+#url{
+
+    word-break:break-word;
+
+    line-height:1.5;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+}
+
+/* =========================================================
+Button
+========================================================= */
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    padding:13px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    transform:translateY(-1px);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+#scan-button{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+#scan-button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.secondary{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+.secondary:hover{
+
+    background:#1d4ed8;
+
+}
+
+button:disabled{
+
+    background:#9ca3af;
+
+    cursor:not-allowed;
+
+}
+
+/* =========================================================
+Loading
+========================================================= */
+
+.spinner{
+
+    width:42px;
+
+    height:42px;
+
+    border:4px solid #dbeafe;
+
+    border-top:4px solid #2563eb;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:14px;
+
+}
+
+.loading-text{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#2563eb;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================================================
+Status Badge
+========================================================= */
+
+#status-badge{
+
+    padding:12px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+}
+
+/* Safe */
+
+.status-safe{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+/* Warning */
+
+.status-warning{
+
+    background:#FEF9C3;
+
+    color:#CA8A04;
+
+}
+
+/* High */
+
+.status-high{
+
+    background:#FFEDD5;
+
+    color:#EA580C;
+
+}
+
+/* Danger */
+
+.status-danger{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+/* =========================================================
+Score
+========================================================= */
+
+.score{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:10px 0;
+
+    font-size:14px;
+
+}
+
+.score span{
+
+    color:#6b7280;
+
+}
+
+.score strong{
+
+    font-size:15px;
+
+    color:#111827;
+
+}
+
+/* =========================================================
+Reason
+========================================================= */
+
+#reason-list{
+
+    padding-left:18px;
+
+}
+
+#reason-list li{
+
+    margin-bottom:8px;
+
+    line-height:1.6;
+
+    font-size:13px;
+
+    color:#374151;
+
+}
+
+/* =========================================================
+Footer
+========================================================= */
+
+footer{
+
+    margin-top:8px;
+
+}
+
+/* =========================================================
+Hidden
+========================================================= */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* =========================================================
+Animation
+========================================================= */
+
+.card{
+
+    animation:fadeIn .25s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================================
+Scrollbar
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}

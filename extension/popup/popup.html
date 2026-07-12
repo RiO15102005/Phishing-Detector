@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Anti Scam Detector</title>
+
+    <link
+        rel="stylesheet"
+        href="popup.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ==========================================
+         Header
+    =========================================== -->
+
+    <header>
+
+        <img
+            src="../icons/icon48.png"
+            class="logo"
+            alt="Logo"
+        >
+
+        <div class="header-text">
+
+            <h1>
+
+                Anti Scam Detector
+
+            </h1>
+
+            <span>
+
+                Version 1.0
+
+            </span>
+
+        </div>
+
+    </header>
+
+    <!-- ==========================================
+         URL
+    =========================================== -->
+
+    <section class="card">
+
+        <div class="label">
+
+            URL
+
+        </div>
+
+        <div id="url">
+
+            Đang tải...
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Action
+    =========================================== -->
+
+    <section
+        id="action-card"
+        class="card center"
+    >
+
+        <button id="scan-button">
+
+            🔍 Kiểm tra Website
+
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         Loading
+    =========================================== -->
+
+    <section
+        id="loading-card"
+        class="card center hidden"
+    >
+
+        <div class="spinner"></div>
+
+        <div class="loading-text">
+
+            Đang phân tích...
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Result
+    =========================================== -->
+
+    <section
+        id="result-card"
+        class="card hidden"
+    >
+
+        <div
+            id="status-badge"
+            class="status-safe"
+        >
+
+            🟢 An toàn
+
+        </div>
+
+        <div class="score">
+
+            <span>
+
+                Risk Score
+
+            </span>
+
+            <strong id="risk-score">
+
+                0
+
+            </strong>
+
+        </div>
+
+        <div class="score">
+
+            <span>
+
+                Confidence
+
+            </span>
+
+            <strong id="confidence">
+
+                100%
+
+            </strong>
+
+        </div>
+
+        <div class="score">
+
+            <span>
+
+                Source
+
+            </span>
+
+            <strong id="source">
+
+                --
+
+            </strong>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Reason
+    =========================================== -->
+
+    <section
+        id="reason-card"
+        class="card hidden"
+    >
+
+        <div class="label">
+
+            Lý do
+
+        </div>
+
+        <ul id="reason-list">
+
+        </ul>
+
+    </section>
+
+    <!-- ==========================================
+         Footer
+    =========================================== -->
+
+    <footer>
+
+        <button
+            id="rescan-button"
+            class="secondary hidden"
+        >
+
+            🔄 Kiểm tra lại
+
+        </button>
+
+    </footer>
+
+</div>
+
+<script
+    type="module"
+    src="popup.js"
+></script>
+
+</body>
+
+</html>
