@@ -112,13 +112,6 @@ Server chạy tại: `http://127.0.0.1:8000`
 Kiểm tra nhanh: mở `http://127.0.0.1:8000/` → trả về
 `{"application": ..., "version": ..., "status": "running"}`
 
-### Test API
-
-```powershell
-curl -X POST http://127.0.0.1:8000/api/v1/analyze `
-  -H "Content-Type: application/json" `
-  -d '{\"url\": \"https://example.com\"}'
-```
 
 ## Cấu trúc thư mục chính
 
