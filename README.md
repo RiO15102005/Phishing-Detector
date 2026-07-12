@@ -1,4 +1,3 @@
-# Phishing Detector
 
 IOC Detection Engine
 
