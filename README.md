@@ -107,10 +107,6 @@ PORT=8000
 python -m uvicorn main:app --reload
 ```
 
-Server chạy tại: `http://127.0.0.1:8000`
-
-Kiểm tra nhanh: mở `http://127.0.0.1:8000/` → trả về
-`{"application": ..., "version": ..., "status": "running"}`
 
 
 ## Cấu trúc thư mục chính
