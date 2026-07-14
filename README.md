@@ -6,11 +6,7 @@
 
 ## Kiến trúc thực tế
 
-Sơ đồ cũ (`Extension → Collector → Checker → OSINT → Risk Engine →
-Response`) đã lỗi thời — `Checker`/`RiskEngine` (rule-based) là dead
-code, không còn được gọi trong pipeline. Kiến trúc hiện tại:
 
-```
 Chrome Extension
       │
       ▼
@@ -35,7 +31,7 @@ Evidence Builder
 Prompt Builder (V5)
       │  (evidence-based, không chứa Rule/Risk/Score/Judgment)
       ▼
-Gemini (gemini-2.5-flash, thinking tắt, timeout 15s)
+Model AI
       │
       ▼
 LLM Parser + Response Validator
@@ -52,13 +48,13 @@ API Response (Extension đọc trực tiếp)
 
 - **Detector chỉ quan sát, không kết luận.** Không có field kiểu
   `brand_impersonation=True` hay `suspicious_url=True` được đưa thẳng
-  vào prompt — mọi kết luận (`safe`/`suspicious`/`malicious`) do Gemini
+  vào prompt — mọi kết luận (`safe`/`suspicious`/`malicious`) do mô hình AI
   tự suy luận từ evidence thô, tránh việc AI chỉ "đóng dấu" lại kết
   luận rule-based đã có sẵn.
 - **Evidence có context.** Keyword đi kèm nguyên câu chứa nó (để phân
   biệt "Đừng nhập OTP" — cảnh báo — với "Nhập OTP để xác thực" — yêu
   cầu thật).
-- **Fail-safe không fail-closed về malicious.** Khi Gemini lỗi/timeout,
+- **Fail-safe không fail-closed về malicious.** Khi mô hình AI lỗi/timeout,
   trả `status: "unknown"` thay vì tự động gắn nhãn nguy hiểm cho site
   chưa phân tích được.
 
@@ -87,12 +83,6 @@ pip install -r requirements.txt
 
 ### 4. Cấu hình `.env`
 
-Tạo file `.env` ở thư mục gốc `backend/` (cùng cấp `main.py`):
-
-```
-GEMINI_API_KEY=your_api_key_here
-GEMINI_MODEL=gemini-2.5-flash
-
 APP_NAME=Phishing Detector
 APP_VERSION=1.0.0
 DEBUG=true
@@ -115,7 +105,7 @@ python -m uvicorn main:app --reload
 backend/
 ├── main.py                    # FastAPI entry point
 ├── requirements.txt
-├── .env                       # GEMINI_API_KEY, GEMINI_MODEL, ...
+├── .env                       
 └── app/
     ├── api/                    # FastAPI routes
     ├── agents/                 # OSINT / Collector / AI Analysis Agent
