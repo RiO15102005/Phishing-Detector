@@ -5,7 +5,7 @@
 1.0
 
 ## Kiến trúc thực tế
-
+```
 
 Chrome Extension
       │
